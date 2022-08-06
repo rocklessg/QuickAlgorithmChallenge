@@ -8,9 +8,16 @@ namespace AlgorithmChallenge
 {
     public static class ChallengeSolution
     {
+        /// <summary>
+        /// Please Check Repo ReadMe for the code flow explanation summary.
+        /// Thank you
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public static List<int> TwoNumbersFromAnArraySumUptoEqualTargetNumber(List<int> array, int target)
         {
-            List<int> result = new List<int>();
+            List<int> result = new();
 
             for (int i = 0; i < array.Count; i++)
             {
