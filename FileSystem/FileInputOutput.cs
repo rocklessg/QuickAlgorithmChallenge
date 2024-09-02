@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FileSystem
+﻿namespace FileSystem
 {
     public static class FileInputOutput
     {
@@ -21,5 +15,17 @@ namespace FileSystem
             Console.WriteLine(line);
             reader.Close();
         }
+    }
+
+    enum SeaState
+    {
+        EmptySea,
+        Attacked,
+        Battleship,
+        Cruiser
+            //SeaState seaState;
+            //seaState = SeaState.EmptySea;
+            //var openSea = SeaState.EmptySea;
+            //openSea.CompareTo(SeaState.EmptySea);
     }
 }
