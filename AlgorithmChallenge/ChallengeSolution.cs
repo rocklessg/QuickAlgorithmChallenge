@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlgorithmChallenge
+﻿namespace AlgorithmChallenge
 {
     public static class ChallengeSolution
     {
@@ -31,6 +25,28 @@ namespace AlgorithmChallenge
                 }
             }
             return result;
+        }
+
+        public static int RunningTotalSum(int[] my_list)
+        {
+            int total = 0;
+
+            for (int i = 0; i < my_list.Length; i++)
+            {
+                if (i == 0)
+                {
+                    total += my_list[i];
+                }
+                else if (i % 2 == 0)
+                {
+                    total += my_list[i];
+                }
+                else if (i % 2 == 1)
+                {
+                    total -= my_list[i];
+                }
+            }
+            return total;
         }
     }
 }
