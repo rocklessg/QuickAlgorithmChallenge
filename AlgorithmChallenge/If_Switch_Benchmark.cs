@@ -3,7 +3,7 @@
 namespace AlgorithmChallenge
 {
     [MemoryDiagnoser]
-    public class Benchmarking
+    public class If_Switch_Benchmark
     {
         private int[] my_list = new int[] {};
 
@@ -15,7 +15,7 @@ namespace AlgorithmChallenge
         }
 
         [Benchmark]
-        public int RunningTotalSumWithIf()
+        public int Compute_Total_Sum_With_If()
         {
             int total = 0;
 
@@ -38,7 +38,7 @@ namespace AlgorithmChallenge
         }
 
         [Benchmark]
-        public int RunningTotalSumWithSwitch()
+        public int Compute_Total_Sum_With_Switch()
         {
             int total = 0;
 

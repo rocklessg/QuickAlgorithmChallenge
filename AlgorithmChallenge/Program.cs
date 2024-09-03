@@ -113,24 +113,30 @@ static bool UseUmbrella(bool rainy, bool sunny, bool windy)
     return !windy && (rainy || sunny);
 }
 
-long Factorial(int x)
+int total = Sum(1, 2, 3, 4);
+WriteLine(total); // 10
+                  // The call to Sum above is equivalent to:
+_ = Sum(new int[] { 1, 2, 3, 4 });
+
+int Sum(params int[] ints)
 {
-    if (x == 0) return 1;
-    return x * Factorial(x - 1);
+    int sum = 0;
+    for (int i = 0; i < ints.Length; i++)
+        sum += ints[i]; // Increase sum by ints[i]
+    return sum;
 }
 
-long Factorialv2(int x)
-{
-    if (x == 0) return 1;
+void Foo(int y, int x = 23) // Optional parameter always comes last after all required paramenters
+{ WriteLine(x +" "+ y); }
 
-    long total = 1;
-    for (int i = 1; i <= x; i++)
-    {
-        total *= i;
-    }
-    return total;
-}
+Foo(x: 1, y: 2); // 1, 2
 
-WriteLine(Factorial(60));
-WriteLine(Factorialv2(60));
-//stopped at pg 60 C# in a nut shell
+Random r = new Random();
+var e = r.Next();
+
+x *= 2; // equivalent to x = x * 2
+int m = 2;
+m <<= 2; // equivalent to x = x << 1
+WriteLine(m);
+
+//stopped at pg 71 C# in a nut shell
