@@ -38,21 +38,40 @@ namespace AlgorithmChallenge
         }
 
         [Benchmark]
-        public int Compute_Total_Sum_With_Switch()
+        //public int Compute_Total_Sum_With_Switch() // This is slower than if else
+        //{
+        //    int total = 0;
+
+        //    for (int i = 0; i < my_list.Length; i++)
+        //    {
+        //        total += i switch
+        //        {
+        //            0 => my_list[i],
+        //            _ when i % 2 == 0 => my_list[i],
+        //            _ when i % 2 == 1 => -my_list[i],
+        //            _ => 0
+        //        };
+        //    }
+        //    return total;
+        //}
+        public int Compute_Total_Sum_With_Switch() // This is faster than if else
         {
             int total = 0;
 
             for (int i = 0; i < my_list.Length; i++)
             {
-                total += i switch
+                switch (i)
                 {
-                    0 => my_list[i],
-                    _ when i % 2 == 0 => my_list[i],
-                    _ when i % 2 == 1 => -my_list[i],
-                    _ => 0
-                };
+                    case 0:
+                        total += my_list[i];
+                        break;
+                    default:
+                        total += (i % 2 == 0) ? my_list[i] : -my_list[i];
+                        break;
+                }
             }
             return total;
         }
+
     }
 }
